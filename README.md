@@ -17,5 +17,5 @@ O **Campo Direto** é um projeto de uma plataforma marketplace desenvolvida para
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/campo-direto.git](https://github.com/seu-usuario/campo-direto.git)
+   git clone [https://github.com/edirley123/campo-direto.git](https://github.com/edirley123/campo-direto.git)
    cd campo-direto
