@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Direto - O Marketplace do Produtor</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: auto; }
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .preco { color: #2e7d32; font-size: 1.25rem; font-weight: bold; margin: 10px 0; }
+        .btn-whats { background-color: #25d366; color: white; text-decoration: none; padding: 10px; border-radius: 5px; display: block; text-align: center; font-weight: bold; }
+        .btn-anunciar { background-color: #007bff; color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Campo Direto</h1>
+            <a href="/cadastrar" class="btn-anunciar">+ Anunciar Produto</a>
+        </header>
+
+        <h2>Produtos Disponíveis</h2>
+        <div class="grid">
+            {% if produtos %}
+                {% for produto in produtos %}
+                <div class="card">
+                    <h3>{{ produto['nome'] }}</h3>
+                    <p class="preco">R$ {{ produto['preco'] }}</p>
+                    <p><strong>Vendedor:</strong> {{ produto['contato_nome'] }}</p>
+                    <p>{{ produto['descricao'] }}</p>
+                    <a href="https://wa.me/55{{ produto['whatsapp'] }}?text=Olá,%20tenho%20interesse%20no%20produto%20{{ produto['nome'] }}%20que%20vi%20no%20Campo%20Direto." 
+                       target="_blank" class="btn-whats">
+                       Chamar no WhatsApp
+                    </a>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Nenhum produto cadastrado no momento. Seja o primeiro!</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
