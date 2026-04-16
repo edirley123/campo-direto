@@ -42,7 +42,7 @@ Uma aplicação web robusta que permite o cadastro de produtos, gestão de estoq
 ---
 
 ## 📸 Demonstração
-*(!(projeto.png))*
+*![Demonstração](projeto.png)*
 
 ---
 
